@@ -1,4 +1,5 @@
 module Magento
+  require 'magento/engine'
   class Connection 
     attr_accessor :client
     def initialize(*args)

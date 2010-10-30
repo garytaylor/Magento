@@ -1,14 +1,13 @@
-require 'rubygems'
-require 'rake'
-require 'echoe'
-
-Echoe.new('magento-api', '0.1.0') do |p|
-  p.description              = "Rubygem for connecting to a Magento store via the Magento Core API"
-  p.url                      = ""
-  p.author                   = "Tim Matheson"
-  p.email                    = "me@timmatheson.com"
-  p.ignore_pattern           = ["tmp/*","script/*"]
-  p.development_dependencies = []
+begin
+  require "jeweler"
+  Jeweler::Tasks.new do |gem|
+    gem.name = "magento"
+    gem.summary = "Magento API Wrapper For Rails 3"
+    gem.email = "gary.taylor@rubysystems.co.uk"
+    gem.authors = ["Gary Taylor","Tim Matheson"]
+    gem.files = Dir["{lib}/**/*"]
+    gem.add_dependency 'railties'
+  end
+rescue
+  puts "Jeweler or dependency not available."
 end
-
-Dir["#{File.dirname(__FILE__)}/lib/tasks/*.rake"].sort.each { |ext| load ext }

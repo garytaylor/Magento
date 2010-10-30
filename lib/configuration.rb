@@ -10,7 +10,7 @@ module Magento
     end
     
     def initialize
-      raise ConfigurationException, "Missing configuration file" unless File.exists?(@@config_path)
+      raise ConfigurationException, "Missing configuration file #{@@config_path}" unless File.exists?(@@config_path)
       options = YAML.load_file(@@config_path)
       @username = options["username"]
       @api_key  = options["api_key"]
